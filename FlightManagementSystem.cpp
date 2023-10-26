@@ -12,6 +12,7 @@ class Flight {
 	public:
 		void input_trip_date() {
 			cout << "\nEnter Date of Journey(DDMMYYYY) : ";
+			cin.ignore();
 			getline(cin, trip_date);
 			t_date = trip_date;
 		}
@@ -56,7 +57,7 @@ class Domestic : virtual public Flight, public Location {
 		
 		void get_flight_choice(string h1, string h2, string p1, string h3,
 		 string h4, string p2, string h5, string h6, string p3) {
-			cout << "\nFlights are as follows :---";
+			cout << "\nFlights for date " << t_date << " are as follows :---";
 			cout << "\n1.Spicejet\tTake-off:- " << h1 << " hrs\tLanding:- " << h2 << " hrs\tPrice:- Rs." << p1;
 			cout << "\n2.Indigo\tTake-off:- " << h3 << " hrs\tLanding:- " << h4 << " hrs\tPrice:- Rs." << p2;
 			cout << "\n3.GoAir \tTake-off:- " << h5 << " hrs\tLanding:- " << h6 << " hrs\tPrice:- Rs." << p3;
@@ -68,6 +69,7 @@ class Domestic : virtual public Flight, public Location {
 		}
 		
 		void input_depart_destin() {
+			cout << "Date of Journey (DDMMYYYY): " << t_date << endl;
 			cout << "\n\nLocations available:\n1) Ahmedabad\n2) Mumbai\n3) Delhi";
 			cout << "\nEnter departure location number: ";
 			cin >> departure_num;
@@ -123,7 +125,7 @@ class International : virtual public Flight, public Location {
 		
 		void get_flight_choice(string h1, string h2, string p1, string h3,
 		 string h4, string p2, string h5, string h6, string p3) {
-			cout << "\nFlights are as follows :---";
+			cout << "\nFlights for date " << t_date << " are as follows :---";
 			cout << "\n1.Emirates\tTake-off:- " << h1 << " hrs\tLanding:- " << h2 << " hrs\tPrice:- Rs." << p1;
 			cout << "\n2.Qatar Airways\tTake-off:- " << h3 << " hrs\tLanding:- " << h4 << " hrs\tPrice:- Rs." << p2;
 			cout << "\n3.Air India\tTake-off:- " << h5 << " hrs\tLanding:- " << h6 << " hrs\tPrice:- Rs." << p3;
@@ -135,6 +137,7 @@ class International : virtual public Flight, public Location {
 		}
 		
 		void input_depart_destin() {
+			cout << "Date of Journey (DDMMYYYY): " << t_date << endl;
 			cout << "\n\nLocations available:\n1) Melbourn\n2) California\n3) Sweden";
 			cout << "\nEnter departure location number: ";
 			cin >> departure_num;
